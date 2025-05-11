@@ -1,0 +1,129 @@
+*,
+*::after,
+*::before {
+    box-sizing: border-box;
+    user-select: none;
+    padding: 0;
+    margin: 0;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+li,
+span {
+    font-weight: normal;
+}
+
+:root {
+    --font-family: sans-serif, serif;
+    --color-primary: #404040;
+    --color-white: #fff;
+    --trs-1s: all 0.1s ease-in;
+}
+
+body {
+    font-family: var(--font-family);
+    line-height: 1.6;
+    font-size: 1rem;
+    color: var(--color-primary);
+    height: 100vh;
+    width: 100%;
+}
+
+/* Main */
+main {
+    gap: 1.5rem;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+}
+
+/* Section */
+section.bg {
+    background: url(../images/bg.jpg) no-repeat;
+    /*background: url(./bg-2.png) no-repeat;*/
+    animation: a-hue 4s infinite linear;
+    background-attachment: fixed;
+    background-position: center;
+    background-size: cover;
+    position: fixed;
+    inset: 0;
+}
+
+section.content {
+    display: flex;
+    position: relative;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+}
+section.content .brand {
+    animation: a-fade 1.5s ease;
+    width: 200px;
+    opacity: 1;
+}
+section.content .card {
+    animation: a-slide-bottom-to-top 0.5s ease;
+    padding: 3.5rem 1.6rem;
+    background-color: #fff;
+    background-color: rgba(255, 255, 255, 0.60);
+    backdrop-filter: blur(1rem);
+    border-radius: 36px;
+    max-height: 80%;
+    display: none;
+    width: 450px;
+    gap: 2rem;
+    text-align: center;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+}
+section.content .card h4 {
+    font-size: 1.1rem;
+    color: #606060;
+}
+section.content .card svg {
+    animation: a-rotate 0.4s infinite linear;
+}
+.section-brand-style {
+    display: none;
+}
+.section-card-style {
+    display: flex !important;
+}
+
+/* Animations */
+@keyframes a-hue {
+    0% {
+        filter: hue-rotate(360deg);
+    }
+}
+
+@keyframes a-fade {
+    0% {
+        opacity: 0;
+    }
+}
+
+@keyframes a-slide-top-to-bottom {
+    0% {
+        transform: translate3d(0, -200px, 0);
+    }
+}
+@keyframes a-slide-bottom-to-top {
+    0% {
+        transform: translate3d(0, 200px, 0);
+    }
+}
+
+@keyframes a-rotate {
+    0% {
+        rotate: 360deg;
+    }
+}
